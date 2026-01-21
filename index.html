@@ -34,14 +34,18 @@
 
         /* Number position - set very high */
         .days-only {
-            margin-top: 200px; /* Moves the number to the very top */
+            margin-top: 200px; 
             font-size: 50px; 
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            background: rgba(0, 0, 0, 0); 
+            
+            /* CHANGE: Made background opaque (0.8 = 80% opacity) */
+            background: rgba(0, 0, 0, 0.8); 
+            
             padding: 15px 30px;
             border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.5); /* Added slight shadow for depth */
         }
     </style>
 </head>
@@ -55,13 +59,14 @@
 
     <script>
         function updateDays() {
-            // Updated for the year 2026
+            // Target date: Ramadan 2026 (approx Feb 18)
             const ramadan = new Date("February 18, 2026 00:00:00").getTime();
             const now = new Date().getTime();
             const diff = ramadan - now;
 
             const d = Math.floor(diff / (1000 * 60 * 60 * 24));
             
+            // Displays remaining days, or 0 if Ramadan has started
             document.getElementById("days").innerText = d > 0 ? d : "0";
         }
 
@@ -71,6 +76,3 @@
 
 </body>
 </html>
-
-
-
