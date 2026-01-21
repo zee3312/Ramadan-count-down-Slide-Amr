@@ -32,26 +32,27 @@
             height: 100vh;
         }
 
-        /* Updated Days Box */
+        /* Adjusted Days Box */
         .days-only {
-            margin-top: 150px; /* Adjusted slightly to accommodate larger text */
+            margin-top: 180px; 
             
             /* Font Customization */
-            font-size: 120px; /* Significantly larger font */
+            font-size: 80px; /* Reduced from 120px to be large but not "too large" */
             font-weight: bold;
-            color: #5D4037; /* Dark brown text for better contrast on cream */
+            color: #333333; /* Dark grey text for readability on light background */
             text-align: center;
             
-            /* Cream Box Styling */
-            background-color: #FFFDD0; /* Solid Cream Color */
-            padding: 20px 50px;
-            border-radius: 20px;
+            /* Box Styling */
+            background-color: #f8f8f8; /* Specific requested color code */
+            padding: 10px 40px;
+            border-radius: 15px;
             
-            /* Shadow for depth */
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+            /* Subtle shadow to make the light box pop against the background */
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
             
-            /* Optional: Add a slight border */
-            border: 2px solid #F0E68C;
+            /* Ensures the box doesn't get too wide if the number is small */
+            min-width: 120px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -65,7 +66,7 @@
 
     <script>
         function updateDays() {
-            // Target date: Ramadan 2026 (approx Feb 18)
+            // Target date: Ramadan 2026 (estimated February 18, 2026)
             const ramadan = new Date("February 18, 2026 00:00:00").getTime();
             const now = new Date().getTime();
             const diff = ramadan - now;
