@@ -11,7 +11,7 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Updated Background Image Filename */
+        /* Background Image */
         .background {
             position: fixed;
             top: 0;
@@ -24,7 +24,7 @@
             z-index: -1;
         }
 
-        /* Container set to align at the TOP */
+        /* Container alignment */
         .content {
             display: flex;
             justify-content: center;
@@ -32,20 +32,26 @@
             height: 100vh;
         }
 
-        /* Number position - set very high */
+        /* Updated Days Box */
         .days-only {
-            margin-top: 200px; 
-            font-size: 50px; 
+            margin-top: 150px; /* Adjusted slightly to accommodate larger text */
+            
+            /* Font Customization */
+            font-size: 120px; /* Significantly larger font */
             font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            color: #5D4037; /* Dark brown text for better contrast on cream */
+            text-align: center;
             
-            /* CHANGE: Made background opaque (0.8 = 80% opacity) */
-            background: rgba(0, 0, 0, 0.8); 
+            /* Cream Box Styling */
+            background-color: #FFFDD0; /* Solid Cream Color */
+            padding: 20px 50px;
+            border-radius: 20px;
             
-            padding: 15px 30px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.5); /* Added slight shadow for depth */
+            /* Shadow for depth */
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+            
+            /* Optional: Add a slight border */
+            border: 2px solid #F0E68C;
         }
     </style>
 </head>
@@ -66,11 +72,12 @@
 
             const d = Math.floor(diff / (1000 * 60 * 60 * 24));
             
-            // Displays remaining days, or 0 if Ramadan has started
+            // Displays remaining days
             document.getElementById("days").innerText = d > 0 ? d : "0";
         }
 
         updateDays();
+        // Update every hour
         setInterval(updateDays, 3600000); 
     </script>
 
