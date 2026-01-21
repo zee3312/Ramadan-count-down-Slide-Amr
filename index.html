@@ -11,36 +11,37 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Full Screen Background Image */
+        /* Updated Background Image Filename */
         .background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('logoRamadan.png');
+            background-image: url('logoRamand.png');
             background-size: cover;
             background-position: center;
             z-index: -1;
         }
 
-        /* Centered Container */
+        /* Container set to align at the TOP */
         .content {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
         }
 
-        /* 50px is 5 times smaller than the previous 250px */
+        /* Number position - set very high */
         .days-only {
+            margin-top: 20px; /* Moves the number to the very top */
             font-size: 50px; 
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            background: rgba(0, 0, 0, 0.4); /* Dark circle/box behind number for visibility */
-            padding: 20px 40px;
-            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.4); 
+            padding: 15px 30px;
+            border-radius: 12px;
         }
     </style>
 </head>
@@ -54,19 +55,17 @@
 
     <script>
         function updateDays() {
-            // Target date: February 18, 2026
+            // Updated for the year 2026
             const ramadan = new Date("February 18, 2026 00:00:00").getTime();
             const now = new Date().getTime();
             const diff = ramadan - now;
 
             const d = Math.floor(diff / (1000 * 60 * 60 * 24));
             
-            // Displays only the number
             document.getElementById("days").innerText = d > 0 ? d : "0";
         }
 
         updateDays();
-        // Check once an hour to keep it accurate
         setInterval(updateDays, 3600000); 
     </script>
 
